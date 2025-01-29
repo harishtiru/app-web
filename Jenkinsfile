@@ -61,7 +61,7 @@ def runPipeline(env, previousBranch) {
                 git config --global user.name '${GIT_USERNAME}'
                 git config --global user.password '${GIT_PASSWORD}'
                 git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/harishtiru/app-web.git
-                cd your-repo
+                cd app-web
                 git checkout ${env}
             """
         }
