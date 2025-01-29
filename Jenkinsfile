@@ -58,6 +58,7 @@ def runPipeline(env, previousBranch) {
         withCredentials([usernamePassword(credentialsId: 'gituserpass', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
             // Set Git credentials for cloning and checkout
             sh """
+                rm -rf app-web
                 git config --global user.name '${GIT_USERNAME}'
                 git config --global user.password '${GIT_PASSWORD}'
                 git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/harishtiru/app-web.git
