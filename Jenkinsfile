@@ -80,8 +80,8 @@ def runPipeline(env, previousBranch) {
     stage("Build Docker Image (${env})") {
         def imageTag = "${DOCKER_REGISTRY}/test-app:${env}-${UUID.randomUUID().toString().take(8)}"
         sh """
-            docker build -t ${imageTag} .
-            docker push ${imageTag}
+            sudo docker build -t ${imageTag} .
+            sudo docker push ${imageTag}
         """
     }
 
