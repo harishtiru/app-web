@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ${appname}
-        image: harishtiru/${appname}:v${BUILD_ID}
+        image: harishtiru/${appname}-${env}:v${BUILD_ID}
         ports:
         - containerPort: 3000
         livenessProbe:
